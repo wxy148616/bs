@@ -52,6 +52,10 @@ function submitTest(d) {
         document.getElementById("change_margin_2").style.marginBottom = 1 + "px";
         document.getElementById("change_margin_3").style.marginTop = 2 + "px";
         return false;
+    } else if (a != "yangjunxia") {
+        alert("用户名或密码错误！")
+    } else if (b != "iloveyou") {
+        alert("用户名或密码错误！")
     }
 self.location='home.html'
 }
