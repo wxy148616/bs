@@ -54,8 +54,10 @@ function submitTest(d) {
         return false;
     } else if (a != "yangjunxia") {
         alert("用户名或密码错误！")
+        return false;
     } else if (b != "iloveyou") {
         alert("用户名或密码错误！")
+        return false;
     }
 self.location='home.html'
 }
