@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery点击展开收缩树形菜单</title>
+    <style>
+        ul li {
+            list-style: square;
+        }
+        .active_n{
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        function onlick(d) {
+            var div1 = document.getElementById("a1");
+            var div2 = document.getElementById("a2");
+            var div3 = document.getElementById("a3");
+            var div3_1 = document.getElementById("a3_1");
+            var div3_2 = document.getElementById("a3_2");
+            var div4 = document.getElementById("a4");
+            var div4_1 = document.getElementById("a4_1");
+            var div4_2 = document.getElementById("a4_2");
+            if (d == "yi") {
+                if (div1.className == "active") {
+                    div1.className = "active_n"
+                } else {
+                    div1.className = "active";
+                    div2.className = "active_n";
+                    div3.className = "active_n";
+                    div4.className = "active_n"
+                }
+            } else if (d == "er") {
+                if (div2.className == "active") {
+                    div2.className = "active_n"
+                } else {
+                    div2.className = "active";
+                    div1.className = "active_n";
+                    div3.className = "active_n";
+                    div4.className = "active_n"
+                }
+            } else if (d == "san") {
+                if (div3.className == "active" ) {
+                    div3.className = "active_n"
+                } else {
+                    div3.className = "active";
+                    div2.className = "active_n";
+                    div1.className = "active_n";
+                    div4.className = "active_n"
+                }
+            } else if (d == "san_yi") {
+                if (div3_1.className == "active") {
+                    div3_1.className = "active_n"
+                } else {
+                    div3_1.className = "active";
+                    div3_2.className = "active_n"
+                }
+            } else if (d == "san_er") {
+                if (div3_2.className == "active") {
+                    div3_2.className = "active_n"
+                } else {
+                    div3_2.className = "active";
+                    div3_1.className = "active_n"
+                }
+            } else if (d == "si") {
+                if (div4.className == "active") {
+                    div4.className = "active_n"
+                } else {
+                    div4.className = "active";
+                    div3.className = "active_n";
+                    div2.className = "active_n";
+                    div1.className = "active_n"
+                }
+            } else if (d == "si_yi") {
+                if (div4_1.className == "active") {
+                    div4_1.className = "active_n"
+                } else {
+                    div4_1.className = "active";
+                    div4_2.className = "active_n"
+                }
+            } else if (d == "si_er") {
+                if (div4_2.className == "active") {
+                    div4_2.className = "active_n"
+                } else {
+                    div4_2.className = "active";
+                    div4_1.className = "active_n"
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<div class="list">
+    <ul class="yiji">
+        <li><a href="#" onclick="onlick('yi')">菜单一</a>
+            <ul id="a1" class="active_n">
+                <li><a href="#">综合部</a></li>
+                <li><a href="#">大型活动部</a></li>
+                <li><a href="#">展览部</a></li>
+                <li><a href="#">艺委会工作部</a></li>
+                <li><a href="#">信息资源部</a></li>
+                <li><a href="#">双年展办公室</a></li>
+            </ul>
+        </li>
+        <li><a onclick="onlick('er')" href="#">菜单二</a>
+            <ul id="a2" class="active_n">
+                <li><a href="#">综合部</a></li>
+                <li><a href="#">大型活动部</a></li>
+                <li><a href="#">展览部</a></li>
+                <li><a href="#">艺委会工作部</a></li>
+                <li><a href="#">信息资源部</a></li>
+                <li><a href="#">双年展办公室</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#" onclick="onlick('san')">菜单三</a>
+            <ul id="a3" class="active_n">
+                <li><a href="#" onclick="onlick('san_yi')">美协机关</a>
+                    <ul id="a3_1" class="active_n">
+                        <li><a href="#">办公室</a></li>
+                        <li><a href="#">人事处</a></li>
+                        <li><a href="#">组联部</a></li>
+                        <li><a href="#">外联部</a></li>
+                        <li><a href="#">研究部</a></li>
+                        <li><a href="#">维权办</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="onlick('san_er')">中国文联美术艺术中心</a>
+                    <ul id="a3_2" class="active_n">
+                        <li><a href="#">综合部</a></li>
+                        <li><a href="#">大型活动部</a></li>
+                        <li><a href="#">展览部</a></li>
+                        <li><a href="#">艺委会工作部</a></li>
+                        <li><a href="#">信息资源部</a></li>
+                        <li><a href="#">双年展办公室</a></li>
+                    </ul>
+                </li>
+                <li class="last"><a href="#">《美术》杂志社</a></li>
+            </ul>
+        </li>
+
+
+        <li><a href="#" class="inactive" onclick="onlick('si')">菜单四</a>
+            <ul id="a4" class="active_n">
+                <li><a onclick="onlick('si_yi')" href="#">美协机关</a>
+                    <ul id="a4_1" class="active_n">
+                        <li><a href="#">办公室</a></li>
+                        <li><a href="#">人事处</a></li>
+                        <li><a href="#">组联部</a></li>
+                        <li><a href="#">外联部</a></li>
+                        <li><a href="#">研究部</a></li>
+                        <li><a href="#">维权办</a></li>
+                    </ul>
+                </li>
+                <li><a onclick="onlick('si_er')" href="#" >中国文联美术艺术中心</a>
+                    <ul id="a4_2" class="active_n">
+                        <li><a href="#">综合部</a></li>
+                        <li><a href="#">大型活动部</a></li>
+                        <li><a href="#">展览部</a></li>
+                        <li><a href="#">艺委会工作部</a></li>
+                        <li><a href="#">信息资源部</a></li>
+                        <li><a href="#">双年展办公室</a></li>
+                    </ul>
+                </li>
+                <li class="last"><a href="#">《美术》杂志社</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
